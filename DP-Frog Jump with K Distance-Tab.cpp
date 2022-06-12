@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    int n;
+    int n,k;
     cin>>n>>k;
     vector<int> dp(n,0);
     vector<int> height;
@@ -21,7 +21,7 @@ int main() {
                 int step = dp[i-j]+abs(height[i]-height[i-j]);
                 minStep = min(minStep,step);
             }
-            dp[i] = minStep
+            dp[i] = minStep;
         }
     }
     cout<<dp[n-1];

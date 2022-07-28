@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+//Another way is to sort the strings and compare = nlogn method
+bool checkPurmutationExists(string str1, string str2){
+    if(str1.size() !=str2.size()) return false;
+    
+    vector<int> frequencyArray(128,0);
+    for(int i = 0;i<str1.size();i++){
+        frequencyArray[int(str1[i])]++;
+    }
+    for(int i = 0;i<str2.size();i++){
+        frequencyArray[int(str2[i])]--;
+    }
+    for(int i=0;i<128;i++){
+        if(frequencyArray[i]!=0){
+            return false;
+        }
+    }
+    return true;
+}
+
+int main() {
+	string str1, str2;
+	getline(cin,str1);
+	getline(cin,str2);
+	cout<<checkPurmutationExists(str1,str2);
+	return 0;
+}

@@ -11,7 +11,8 @@ Node* insert(Node* head, int value){
        Node* newNode = new Node();
        newNode->data = value;
        newNode->next = NULL;
-       return newNode;
+       head = newNode;
+       return head;
     }
     Node* listIterator = head;
     while(listIterator->next!=NULL){

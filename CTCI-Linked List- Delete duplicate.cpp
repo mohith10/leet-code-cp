@@ -67,8 +67,7 @@
          }
          listIterator = listIterator->next;
      }
-     delete listIterator;
-     delete secondListIterator;
+   
  }
  
  

@@ -9,13 +9,13 @@ void sortStack(stack<int> &st){
         int ele = st.top();
         st.pop();
         if(!tempStack.empty()){
-            if(tempStack.top() > ele){
-                while(!tempStack.empty()){
+            
+                while(!tempStack.empty() && tempStack.top() > ele){
                     int tempEle = tempStack.top();
                     tempStack.pop();
                     st.push(tempEle);
                 }
-            }
+
         }
         tempStack.push(ele);
     }
